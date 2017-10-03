@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/invoicemanager/!svn/ver/30/trunk/WebRoot/WEB-INF/jsp/invoice_data_statistics/monthly_statistics
+END
+list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/invoicemanager/!svn/ver/33/trunk/WebRoot/WEB-INF/jsp/invoice_data_statistics/monthly_statistics/list.jsp
+END
+first.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/invoicemanager/!svn/ver/35/trunk/WebRoot/WEB-INF/jsp/invoice_data_statistics/monthly_statistics/first.jsp
+END

@@ -1,0 +1,112 @@
+10
+
+dir
+22
+https://127.0.0.1/svn/invoicemanager/trunk/WebRoot/WEB-INF/jsp
+https://127.0.0.1/svn/invoicemanager
+
+
+
+2016-11-26T07:35:56.097133Z
+21
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7bfea29d-6538-1248-9dc5-e7154b039554
+
+administrativedivision
+dir
+
+basic
+dir
+
+commodity
+dir
+
+costitems
+dir
+
+customer
+dir
+
+equipment_management
+dir
+
+goodsandservicestax
+dir
+
+invoice_data_statistics
+dir
+
+invoice_issue_management
+dir
+
+invoice_manager
+dir
+
+invoiceinventory
+dir
+
+invoicemanager
+dir
+
+invoicetype
+dir
+
+main
+dir
+
+purchaseunits
+dir
+
+receive
+dir
+
+role
+dir
+
+scarlet_letter_invoice
+dir
+
+system_maintenance
+dir
+
+systemmaintain
+dir
+
+systemset
+dir
+
+systemsettings
+dir
+
+tax_return_manage
+dir
+
+taxitem
+dir
+
+taxmanager
+dir
+
+ticketspecification
+dir
+
+user
+dir
+
+vehicle
+dir
+

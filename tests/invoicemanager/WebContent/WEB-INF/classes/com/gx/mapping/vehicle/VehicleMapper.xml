@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gx.dao.vehicle.VehicleMapper" >
+  <resultMap id="BaseResultMap" type="com.gx.po.vehicle.Vehicle" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="vehicletype" property="vehicletype" jdbcType="VARCHAR" />
+    <result column="simplecode" property="simplecode" jdbcType="VARCHAR" />
+    <result column="brandmodel" property="brandmodel" jdbcType="VARCHAR" />
+    <result column="originplace" property="originplace" jdbcType="VARCHAR" />
+    <result column="enterprisename" property="enterprisename" jdbcType="VARCHAR" />
+    <result column="taxtypecode" property="taxtypecode" jdbcType="VARCHAR" />
+    <result column="taxtypename" property="taxtypename" jdbcType="VARCHAR" />
+    <result column="policytype" property="policytype" jdbcType="INTEGER" />
+    <result column="enjoypolicies" property="enjoypolicies" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, code, vehicletype, simplecode, brandmodel, originplace, enterprisename, taxtypecode, 
+    taxtypename, policytype, enjoypolicies
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_vehicle
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sys_vehicle
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gx.po.vehicle.Vehicle" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_vehicle (code, vehicletype, simplecode, 
+      brandmodel, originplace, enterprisename, 
+      taxtypecode, taxtypename, policytype, 
+      enjoypolicies)
+    values (#{code,jdbcType=VARCHAR}, #{vehicletype,jdbcType=VARCHAR}, #{simplecode,jdbcType=VARCHAR}, 
+      #{brandmodel,jdbcType=VARCHAR}, #{originplace,jdbcType=VARCHAR}, #{enterprisename,jdbcType=VARCHAR}, 
+      #{taxtypecode,jdbcType=VARCHAR}, #{taxtypename,jdbcType=VARCHAR}, #{policytype,jdbcType=INTEGER}, 
+      #{enjoypolicies,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gx.po.vehicle.Vehicle" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_vehicle
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="vehicletype != null" >
+        vehicletype,
+      </if>
+      <if test="simplecode != null" >
+        simplecode,
+      </if>
+      <if test="brandmodel != null" >
+        brandmodel,
+      </if>
+      <if test="originplace != null" >
+        originplace,
+      </if>
+      <if test="enterprisename != null" >
+        enterprisename,
+      </if>
+      <if test="taxtypecode != null" >
+        taxtypecode,
+      </if>
+      <if test="taxtypename != null" >
+        taxtypename,
+      </if>
+      <if test="policytype != null" >
+        policytype,
+      </if>
+      <if test="enjoypolicies != null" >
+        enjoypolicies,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicletype != null" >
+        #{vehicletype,jdbcType=VARCHAR},
+      </if>
+      <if test="simplecode != null" >
+        #{simplecode,jdbcType=VARCHAR},
+      </if>
+      <if test="brandmodel != null" >
+        #{brandmodel,jdbcType=VARCHAR},
+      </if>
+      <if test="originplace != null" >
+        #{originplace,jdbcType=VARCHAR},
+      </if>
+      <if test="enterprisename != null" >
+        #{enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="taxtypecode != null" >
+        #{taxtypecode,jdbcType=VARCHAR},
+      </if>
+      <if test="taxtypename != null" >
+        #{taxtypename,jdbcType=VARCHAR},
+      </if>
+      <if test="policytype != null" >
+        #{policytype,jdbcType=INTEGER},
+      </if>
+      <if test="enjoypolicies != null" >
+        #{enjoypolicies,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gx.po.vehicle.Vehicle" >
+    update sys_vehicle
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicletype != null" >
+        vehicletype = #{vehicletype,jdbcType=VARCHAR},
+      </if>
+      <if test="simplecode != null" >
+        simplecode = #{simplecode,jdbcType=VARCHAR},
+      </if>
+      <if test="brandmodel != null" >
+        brandmodel = #{brandmodel,jdbcType=VARCHAR},
+      </if>
+      <if test="originplace != null" >
+        originplace = #{originplace,jdbcType=VARCHAR},
+      </if>
+      <if test="enterprisename != null" >
+        enterprisename = #{enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="taxtypecode != null" >
+        taxtypecode = #{taxtypecode,jdbcType=VARCHAR},
+      </if>
+      <if test="taxtypename != null" >
+        taxtypename = #{taxtypename,jdbcType=VARCHAR},
+      </if>
+      <if test="policytype != null" >
+        policytype = #{policytype,jdbcType=INTEGER},
+      </if>
+      <if test="enjoypolicies != null" >
+        enjoypolicies = #{enjoypolicies,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gx.po.vehicle.Vehicle" >
+    update sys_vehicle
+    set code = #{code,jdbcType=VARCHAR},
+      vehicletype = #{vehicletype,jdbcType=VARCHAR},
+      simplecode = #{simplecode,jdbcType=VARCHAR},
+      brandmodel = #{brandmodel,jdbcType=VARCHAR},
+      originplace = #{originplace,jdbcType=VARCHAR},
+      enterprisename = #{enterprisename,jdbcType=VARCHAR},
+      taxtypecode = #{taxtypecode,jdbcType=VARCHAR},
+      taxtypename = #{taxtypename,jdbcType=VARCHAR},
+      policytype = #{policytype,jdbcType=INTEGER},
+      enjoypolicies = #{enjoypolicies,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findAll" resultType="com.gx.po.vehicle.Vehicle">
+  	select * from sys_vehicle
+	ORDER BY sys_vehicle.id DESC
+  </select>
+</mapper>

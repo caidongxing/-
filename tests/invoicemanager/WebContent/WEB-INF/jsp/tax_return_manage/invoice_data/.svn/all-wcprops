@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/invoicemanager/!svn/ver/27/trunk/WebRoot/WEB-INF/jsp/tax_return_manage/invoice_data
+END
+print.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/invoicemanager/!svn/ver/32/trunk/WebRoot/WEB-INF/jsp/tax_return_manage/invoice_data/print.jsp
+END
+list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/invoicemanager/!svn/ver/28/trunk/WebRoot/WEB-INF/jsp/tax_return_manage/invoice_data/list.jsp
+END

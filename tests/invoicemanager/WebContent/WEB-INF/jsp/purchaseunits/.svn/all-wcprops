@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/invoicemanager/!svn/ver/10/trunk/WebRoot/WEB-INF/jsp/purchaseunits
+END
+purchaseunits_update.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/invoicemanager/!svn/ver/10/trunk/WebRoot/WEB-INF/jsp/purchaseunits/purchaseunits_update.jsp
+END
+purchaseunits_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/invoicemanager/!svn/ver/8/trunk/WebRoot/WEB-INF/jsp/purchaseunits/purchaseunits_list.jsp
+END
+purchaseunits_add.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/invoicemanager/!svn/ver/10/trunk/WebRoot/WEB-INF/jsp/purchaseunits/purchaseunits_add.jsp
+END

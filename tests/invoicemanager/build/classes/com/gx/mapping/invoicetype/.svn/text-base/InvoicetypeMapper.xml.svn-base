@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gx.dao.invoicetype.InvoicetypeMapper" >
+  <resultMap id="BaseResultMap" type="com.gx.po.invoicetype.Invoicetype" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="classname" property="classname" jdbcType="VARCHAR" />
+    <result column="classcode" property="classcode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, classname, classcode
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_invoicetype
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sys_invoicetype
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gx.po.invoicetype.Invoicetype" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_invoicetype (classname, classcode)
+    values (#{classname,jdbcType=VARCHAR}, #{classcode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gx.po.invoicetype.Invoicetype" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_invoicetype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="classname != null" >
+        classname,
+      </if>
+      <if test="classcode != null" >
+        classcode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="classname != null" >
+        #{classname,jdbcType=VARCHAR},
+      </if>
+      <if test="classcode != null" >
+        #{classcode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gx.po.invoicetype.Invoicetype" >
+    update sys_invoicetype
+    <set >
+      <if test="classname != null" >
+        classname = #{classname,jdbcType=VARCHAR},
+      </if>
+      <if test="classcode != null" >
+        classcode = #{classcode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gx.po.invoicetype.Invoicetype" >
+    update sys_invoicetype
+    set classname = #{classname,jdbcType=VARCHAR},
+      classcode = #{classcode,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findAll" resultType="com.gx.po.invoicetype.Invoicetype">
+  	SELECT * FROM sys_invoicetype
+<!-- 	ORDER BY sys_invoicetype.id DESC -->
+  </select>
+</mapper>

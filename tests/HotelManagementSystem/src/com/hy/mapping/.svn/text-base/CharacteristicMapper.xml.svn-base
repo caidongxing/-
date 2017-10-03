@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hy.dao.CharacteristicMapper" >
+  <resultMap id="BaseResultMap" type="com.hy.po.Characteristic" >
+    <id column="characteristicid" property="characteristicid" jdbcType="INTEGER" />
+    <result column="characteristic" property="characteristic" jdbcType="VARCHAR" />
+    <result column="characteristiccode" property="characteristiccode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    characteristicid, characteristic, characteristiccode
+  </sql>
+  
+  <select id="findAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from characteristic
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from characteristic
+    where characteristicid = #{characteristicid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from characteristic
+    where characteristicid = #{characteristicid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hy.po.Characteristic" >
+    insert into characteristic (characteristicid, characteristic, 
+      characteristiccode)
+    values (#{characteristicid,jdbcType=INTEGER}, #{characteristic,jdbcType=VARCHAR}, 
+      #{characteristiccode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hy.po.Characteristic" >
+    insert into characteristic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="characteristicid != null" >
+        characteristicid,
+      </if>
+      <if test="characteristic != null" >
+        characteristic,
+      </if>
+      <if test="characteristiccode != null" >
+        characteristiccode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="characteristicid != null" >
+        #{characteristicid,jdbcType=INTEGER},
+      </if>
+      <if test="characteristic != null" >
+        #{characteristic,jdbcType=VARCHAR},
+      </if>
+      <if test="characteristiccode != null" >
+        #{characteristiccode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hy.po.Characteristic" >
+    update characteristic
+    <set >
+      <if test="characteristic != null" >
+        characteristic = #{characteristic,jdbcType=VARCHAR},
+      </if>
+      <if test="characteristiccode != null" >
+        characteristiccode = #{characteristiccode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where characteristicid = #{characteristicid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hy.po.Characteristic" >
+    update characteristic
+    set characteristic = #{characteristic,jdbcType=VARCHAR},
+      characteristiccode = #{characteristiccode,jdbcType=VARCHAR}
+    where characteristicid = #{characteristicid,jdbcType=INTEGER}
+  </update>
+</mapper>

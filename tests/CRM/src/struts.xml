@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="struts2" extends="struts-default">
+		
+		<action name="dictionaryType" class="dictionaryTypeAction"> <!-- class="是spring里定义dictionaryTypeAction" 的id-->
+			<result name="success">/form/showDictionaryType.jsp</result>
+		</action>
+		
+		<!-- ==========数据字典模块============== -->
+		<!-- 更新字典分类 -->
+		<action name="updateDictionaryType" class="updateDictionaryTypeAction"> <!-- class="是spring里定义updateDictionaryTypeAction" 的id-->
+			<result name="success" type="chain">dictionaryType</result>
+		</action>
+	    <!-- 获取 字典分类名称 -->
+		<action name="dictionaryTypeInfo" class="dictionaryTypeInfoAction"> <!-- class="是spring里定义dictionaryTypeInfoAction" 的id-->
+			<result name="success">/form/showDictionaryTypeInfo.jsp</result>
+		</action>
+		
+		 <!-- 获取 字典分类信息 -->
+		<action name="updateDictionaryTypeInfo" class="updateDictionaryTypeInfoAction"> <!-- class="是spring里定义updateDictionaryTypeInfoAction" 的id-->
+			<result name="success" type="chain">dictionaryTypeInfo</result>
+		</action>
+		
+		<!-- 获取 客户级别 -->
+		<action name="customerLevel" class="customerLevelAction"> <!-- class="是spring里定义customerLevelAction" 的id-->
+			<result name="success">/form/showCustomerLevel.jsp</result>
+		</action>
+		
+		<!-- 获取 更新客户级别 -->
+		<action name="updateCustomerLevel" class="updateCustomerLevelAction"> <!-- class="是spring里定义updateCustomerLevelAction" 的id-->
+			<result name="success" type="chain">customerLevel</result>
+		</action>
+		
+		<!-- ==========客户信息模块============== -->
+		<!-- 获取 客户信息 -->
+		<action name="customerInfo" class="customerInfoAction"> <!-- class="是spring里定义customerInfoAction" 的id-->
+			<result name="success">/form/addCostomerInfoAjax.jsp</result>
+		</action>
+		
+		<!-- 添加 客户信息 -->
+		<action name="addCustomerInfo" class="addCustomerInfoAction"> <!-- class="是spring里定义addCustomerInfoAction" 的id-->
+			<result name="success" type="chain">customerInfo</result>
+		</action>
+		
+		<!-- 查找所有客户信息 -->
+		<action name="findAllCustomerInfo" class="findAllCustomerInfoAction"> <!-- class="是spring里定义addCustomerInfoAction" 的id-->
+			<result name="success">/form/showCostomerInfo.jsp</result>
+		</action>
+		
+		<!-- 查看客户信息 -->
+		<action name="customerInfoDetail" class="customerInfoDetailAction"> <!-- class="是spring里定义addCustomerInfoAction" 的id-->
+			<result name="success">/form/showCostomerInfoDetail.jsp</result>
+		</action>
+		
+		<!-- 修改客户信息 -->
+		<action name="customerInfoUpdate" class="customerInfoUpdateAction"> <!-- class="是spring里定义addCustomerInfoAction" 的id-->
+			<result name="success">/form/updateCostomerInfoAjax.jsp</result>
+		</action>
+		<!--  搜索客户信息 -->
+		<action name="customerInfoQuery" class="customerInfoQueryAction"> <!-- class="是spring里定义customerInfoQueryAction" 的id-->
+			<result name="success">/form/showCostomerInfo.jsp</result>
+		</action>
+		
+		<!--  添加联系人信息 Actiom方式添加使用-->
+		<action name="contactPersonInfoSave" class="contactPersonInfoSaveAction"> <!-- class="是spring里定义contactPersonInfoSaveAction" 的id-->
+			<result name="success" type="chain">findAllContactPersonInfo</result>
+		</action>
+		<!--  添加联系人信息 DWR方式添加使用-->
+		<action name="addContactPersonInfoAjax" class="addContactPersonInfoAjaxAction"> <!-- class="是spring里定义addContactPersonInfoAjaxAction" 的id-->
+			<result name="success">/form/showCostomerInfo.jsp</result>
+		</action>
+		
+		<!-- 查找所有联系人信息 -->
+		<action name="findAllContactPersonInfo" class="findAllContactPersonInfoAction"> <!-- class="是spring里定义findAllContactPersonInfoAction" 的id-->
+			<result name="success">/form/showContactPersonInfo.jsp</result>
+		</action>
+		
+		<!-- 更新所有联系人信息 -->
+		<action name="contactPersonInfoUpdate" class="contactPersonInfoUpdateAction"> <!-- class="是spring里定义contactPersonInfoUpdateAction" 的id-->
+			<result name="success" type="chain">findAllContactPersonInfo</result>
+		</action>
+		
+		
+		<!-- ==========角色模块 （菜单信息模块）============== -->
+		<!-- 获取所有 菜单信息 -->
+		<action name="menuInfoFindAll" class="menuInfoFindAllAction"> <!-- class="是spring里定义menuInfoFindAllAction" 的id-->
+			<result name="success">/form/addRoleInfo.jsp</result>
+		</action>
+		
+		<!-- 获取所有 角色信息 -->
+		<action name="roleInfoFindAll" class="roleInfoFindAllAction"> <!-- class="是spring里定义roleInfoFindAllAction" 的id-->
+			<result name="success">/form/showRoleInfo.jsp</result>
+		</action>
+		<!-- 查看角色权限 -->
+		<action name="roleInfoDetail" class="roleInfoDetailAction"> <!-- class="是spring里定义roleInfoDetailAction" 的id-->
+			<result name="success">/form/showRoleInfoLimits.jsp</result>
+		</action>
+		<!-- 修改角色权限 -->
+		<action name="roleInfoUpdate" class="roleInfoUpdateAction"> <!-- class="是spring里定义roleInfoUpdateAction" 的id-->
+			<result name="success">/form/updateRoleInfo.jsp</result>
+		</action>
+		<!-- 查看所有的用户信息 -->
+		<action name="userInfoFindAll" class="userInfoFindAllAction"> <!-- class="是spring里定义userInfoFindAllAction" 的id-->
+			<result name="success">/form/showUserInfo.jsp</result>
+		</action>
+		<!-- 查看详细用户信息 -->
+		<action name="userInfoDetail" class="userInfoDetailAction"> <!-- class="是spring里定义userInfoDetailAction" 的id-->
+			<result name="success">/form/showUserInfoDetail.jsp</result>
+		</action>
+		<!-- 更新详细用户信息 -->
+		<action name="userInfoUpdate" class="userInfoUpdateAction"> <!-- class="是spring里定义userInfoDetailAction" 的id-->
+			<result name="success">/form/updateUserInfo.jsp</result>
+		</action>
+		
+		<!-- 图片验证码 -->
+			<action name="image" class="com.hj.action.ImgCodeAction">
+				 <result name="success" type="stream">
+				  <param name="inputName">imageStream</param>
+				 </result>
+			</action>
+		<!-- 用户登录校验 -->
+			<action name="login" class="com.hj.action.LoginAction" >
+			     <result name="success">/index.jsp</result>
+			     <result name="input">/login.jsp</result>
+			</action>
+		<!-- =========客户投诉模块============== -->		
+		<!-- //获取满意度 和 //获取状态 -->
+		<action name="complainInfoSave" class="complainInfoSaveAction">
+		        <result name="success">/form/addComplainInfo.jsp</result>
+		</action>
+		
+		<!-- 保存客户投诉信息 -->
+		<action name="addComplainInfoAjax" class="addComplainInfoAjaxAction">
+		        <result name="success">/form/addComplainInfo.jsp</result>
+		</action>
+		<!-- 查找所有客户投诉信息 -->
+		<action name="complainInfoFindAll" class="complainInfoFindAllAction">
+		        <result name="success">/form/showComplainInfo.jsp</result>
+		</action>
+		<!-- 查看客户投诉信息 -->
+		<action name="complainInfoDetail" class="complainInfoDetailAction">
+		        <result name="success">/form/showComplainInfoDetail.jsp</result>
+		</action>
+		<!-- 测试查看客户投诉信息报表
+		<action name="createBarChartComplain" class="createBarChartComplainAction" >
+		    <result name="success">/form/showComplainInfoDetail.jsp</result>
+		</action>
+		 -->
+		<!-- 上传文件 -->
+		<action name="uploadExcelToJava" class="uploadExcelToJavaAction" >
+		     <result name="success"  type="chain">findAllContactPersonInfo</result>
+		</action>
+		
+		<!-- 下载文件 -->
+		<action name="uploadDownJavaToExcel" class="uploadDownJavaToExcelAction" >
+		     <result name="success"  type="stream">
+		        <param name="contentType">application/vnd.ms-excel</param>
+		        <param name="inputName">inputStream</param>
+		        <param name="contentDisposition">attachment;filename="contactpersoninfo.xls"</param>
+		        <param name="bufferSize">4096</param>
+		     
+		     </result>
+		</action>
+		
+		
+	</package>
+	
+	<!--====================== 报表===================================-->
+	<package name="jfreechart"  extends="jfreechart-default" >
+		<action name="createjfreechart" class="com.hj.action.CreateJFreeChartAction" >
+		    <result name="success" type="chart">
+			    <param name="height">350</param>
+    			<param name="width">450</param>
+		    </result>
+		</action>		
+		
+		<action name="createBarChart" class="com.hj.action.CreateBarChartAction" >
+		    <result name="success" type="chart">
+			    <param name="height">350</param>
+    			<param name="width">450</param>
+		    </result>
+		</action>
+		<!-- 客户投诉信息报表 -->
+		<action name="createPieChartComplain" class="createPieChartComplainAction" >
+		     <result name="success" type="chart">
+			    <param name="height">350</param>
+    			<param name="width">450</param>
+		    </result>
+		</action>
+			<!-- 客户投诉信息报表 -->
+		<action name="createBarChartComplain" class="createBarChartComplainAction" >
+		     <result name="success" type="chart">
+			    <param name="height">350</param>
+    			<param name="width">450</param>
+		    </result>
+		</action>	
+		
+		
+		
+	</package>
+	
+	
+	<!--====================== 用户登录===================================-->
+	<package name="user"  extends="json-default" >
+	<!-- 用户登录校验 -->
+		<action name="loginNameValidate" class="loginNameValidateAction" >
+		    <result name="success" type="json">
+			 <param name="root">ok</param>
+		    </result>
+		</action>
+	<!-- ajax方式验证码校验 -->
+		<action name="loginImageValidate" class="com.hj.action.LoginImageValidateAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>			
+	</package>
+	
+</struts>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+    <!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr/dwr20.dtd">   
+    <dwr>   
+      <allow>   
+         <create creator="new" javascript="JDate"> 
+			 <param name="class" value="java.util.Date"/> 
+		 </create>  
+       
+		  <create creator="new" javascript="TestDWR1"> 
+			 <param name="class" value="com.hj.dwr.TestDWR1"/> 
+		 </create> 
+		 
+		  <create creator="new" javascript="TestDWR2"> 
+			 <param name="class" value="com.hj.dwr.TestDWR2"/> 
+		 </create>
+		 
+		 <create creator="new" javascript="TestDWR3"> 
+			 <param name="class" value="com.hj.dwr.TestDWR3"/> 
+		 </create>
+		 
+		 <convert converter="bean" match="com.hj.dwr.Person">
+		   <param name="include" value="name,ages,sex"/> 
+		 </convert>
+		  
+		  
+          <!-- 注解：将那个转换的类型 javascript 名称写入，注入要转换的类名（包名+类名 ）-->
+		  <create creator="spring" javascript="DictionaryTypeDAO"> 
+			 <param name="beanName" value="dictionaryTypeDAOProxy"/> <!-- value="dictionaryTypeDAO"是在applicationContext.xml文件里的bean 的id获取的 给代理对象管理dictionaryTypeDAOProxy-->
+		 </create>
+		 
+		 <convert converter="bean" match="com.hj.entity.DictionaryType">
+		   <param name="include" value="dataTypeId,dataTypeName,dataEnable"/> 
+		 </convert>
+		 
+		 <!-- 客户添加信息 -->
+		 <create creator="spring" javascript="AddCustomerInfoAjax"> 
+			 <param name="beanName" value="addCustomerInfoAjaxAction"/> <!-- <bean id="addCustomerInfoAjaxAction"是在applicationContext.xml文件里的bean 的id获取的 给代理对象管理customerInfoDAOProxy-->
+		 </create>
+		 
+		  <!-- 客户添加联系人信息 -->
+		 <create creator="spring" javascript="AddContactPersonInfoAjax"> 
+			 <param name="beanName" value="addContactPersonInfoAjaxAction"/> <!-- <bean id="addContactPersonInfoAjaxAction"是在applicationContext.xml文件里的bean 的id获取的 给代理对象管理customerInfoDAOProxy-->
+		 </create>
+		 
+          <!-- 添加角色 -->
+		 <create creator="spring" javascript="AddRoleInfoAjax"> 
+			 <param name="beanName" value="addRoleInfoAjaxAction"/> <!-- <bean id="addContactPersonInfoAjaxAction"是在applicationContext.xml文件里的bean 的id获取的 给代理对象管理customerInfoDAOProxy-->
+		 </create>
+		 
+		  <!-- 添加用户信息 -->
+		 <create creator="spring" javascript="AddUserInfoAjax"> 
+			 <param name="beanName" value="addUserInfoAjaxAction"/> <!-- <bean id="addContactPersonInfoAjaxAction"是在applicationContext.xml文件里的bean 的id获取的 给代理对象管理customerInfoDAOProxy-->
+		 </create>
+		 
+		   <!-- 添加用户投诉信息 -->
+		 <create creator="spring" javascript="AddComplainInfoAjax"> 
+			 <param name="beanName" value="addComplainInfoAjaxAction"/> <!-- <bean id="addContactPersonInfoAjaxAction"是在applicationContext.xml文件里的bean 的id获取的 给代理对象管理customerInfoDAOProxy-->
+		 </create>
+		 
+      </allow>   
+    </dwr>  

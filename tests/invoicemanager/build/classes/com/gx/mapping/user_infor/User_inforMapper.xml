@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gx.dao.user_infor.User_inforMapper" >
+  <resultMap id="BaseResultMap" type="com.gx.po.user_infor.User_infor" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="businesstax" property="businesstax" jdbcType="VARCHAR" />
+    <result column="enterprisename" property="enterprisename" jdbcType="VARCHAR" />
+    <result column="billingNo" property="billingno" jdbcType="INTEGER" />
+    <result column="days" property="days" jdbcType="INTEGER" />
+    <result column="expiredprompt" property="expiredprompt" jdbcType="BIT" />
+    <result column="installversion" property="installversion" jdbcType="VARCHAR" />
+    <result column="operationtime" property="operationtime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, userid, businesstax, enterprisename, billingNo, days, expiredprompt, installversion, 
+    operationtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_infor
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_infor
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gx.po.user_infor.User_infor" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user_infor (userid, businesstax, enterprisename, 
+      billingNo, days, expiredprompt, 
+      installversion, operationtime)
+    values (#{userid,jdbcType=INTEGER}, #{businesstax,jdbcType=VARCHAR}, #{enterprisename,jdbcType=VARCHAR}, 
+      #{billingno,jdbcType=INTEGER}, #{days,jdbcType=INTEGER}, #{expiredprompt,jdbcType=BIT}, 
+      #{installversion,jdbcType=VARCHAR}, #{operationtime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.gx.po.user_infor.User_infor" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user_infor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="businesstax != null" >
+        businesstax,
+      </if>
+      <if test="enterprisename != null" >
+        enterprisename,
+      </if>
+      <if test="billingno != null" >
+        billingNo,
+      </if>
+      <if test="days != null" >
+        days,
+      </if>
+      <if test="expiredprompt != null" >
+        expiredprompt,
+      </if>
+      <if test="installversion != null" >
+        installversion,
+      </if>
+      <if test="operationtime != null" >
+        operationtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="businesstax != null" >
+        #{businesstax,jdbcType=VARCHAR},
+      </if>
+      <if test="enterprisename != null" >
+        #{enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="billingno != null" >
+        #{billingno,jdbcType=INTEGER},
+      </if>
+      <if test="days != null" >
+        #{days,jdbcType=INTEGER},
+      </if>
+      <if test="expiredprompt != null" >
+        #{expiredprompt,jdbcType=BIT},
+      </if>
+      <if test="installversion != null" >
+        #{installversion,jdbcType=VARCHAR},
+      </if>
+      <if test="operationtime != null" >
+        #{operationtime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gx.po.user_infor.User_infor" >
+    update user_infor
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="businesstax != null" >
+        businesstax = #{businesstax,jdbcType=VARCHAR},
+      </if>
+      <if test="enterprisename != null" >
+        enterprisename = #{enterprisename,jdbcType=VARCHAR},
+      </if>
+      <if test="billingno != null" >
+        billingNo = #{billingno,jdbcType=INTEGER},
+      </if>
+      <if test="days != null" >
+        days = #{days,jdbcType=INTEGER},
+      </if>
+      <if test="expiredprompt != null" >
+        expiredprompt = #{expiredprompt,jdbcType=BIT},
+      </if>
+      <if test="installversion != null" >
+        installversion = #{installversion,jdbcType=VARCHAR},
+      </if>
+      <if test="operationtime != null" >
+        operationtime = #{operationtime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gx.po.user_infor.User_infor" >
+    update user_infor
+    set userid = #{userid,jdbcType=INTEGER},
+      businesstax = #{businesstax,jdbcType=VARCHAR},
+      enterprisename = #{enterprisename,jdbcType=VARCHAR},
+      billingNo = #{billingno,jdbcType=INTEGER},
+      days = #{days,jdbcType=INTEGER},
+      expiredprompt = #{expiredprompt,jdbcType=BIT},
+      installversion = #{installversion,jdbcType=VARCHAR},
+      operationtime = #{operationtime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

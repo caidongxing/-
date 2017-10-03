@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/invoicemanager/!svn/ver/19/trunk/WebRoot/WEB-INF/jsp/customer
+END
+customer_update.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/invoicemanager/!svn/ver/10/trunk/WebRoot/WEB-INF/jsp/customer/customer_update.jsp
+END
+customer_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/invoicemanager/!svn/ver/51/trunk/WebRoot/WEB-INF/jsp/customer/customer_list.jsp
+END
+customer_add.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/invoicemanager/!svn/ver/50/trunk/WebRoot/WEB-INF/jsp/customer/customer_add.jsp
+END

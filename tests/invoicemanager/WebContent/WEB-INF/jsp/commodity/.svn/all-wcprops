@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/invoicemanager/!svn/ver/10/trunk/WebRoot/WEB-INF/jsp/commodity
+END
+commodity_update.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/invoicemanager/!svn/ver/10/trunk/WebRoot/WEB-INF/jsp/commodity/commodity_update.jsp
+END
+commodity_add.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/invoicemanager/!svn/ver/10/trunk/WebRoot/WEB-INF/jsp/commodity/commodity_add.jsp
+END
+commodity_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/invoicemanager/!svn/ver/24/trunk/WebRoot/WEB-INF/jsp/commodity/commodity_list.jsp
+END

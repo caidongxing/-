@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/invoicemanager/!svn/ver/7/trunk/WebRoot/css
+END
+common.css
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/invoicemanager/!svn/ver/6/trunk/WebRoot/css/common.css
+END
+bootstrap.covering.css
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/invoicemanager/!svn/ver/2/trunk/WebRoot/css/bootstrap.covering.css
+END
+framework.css
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/invoicemanager/!svn/ver/2/trunk/WebRoot/css/framework.css
+END
+style-responsive.css
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/invoicemanager/!svn/ver/2/trunk/WebRoot/css/style-responsive.css
+END
+style.css
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/invoicemanager/!svn/ver/2/trunk/WebRoot/css/style.css
+END
+bootstrap.min.css
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/invoicemanager/!svn/ver/4/trunk/WebRoot/css/bootstrap.min.css
+END
+style-default.css
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/invoicemanager/!svn/ver/2/trunk/WebRoot/css/style-default.css
+END
+ReportServer.css
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/invoicemanager/!svn/ver/2/trunk/WebRoot/css/ReportServer.css
+END
+jquery-ui-1.10.4.custom.min.css
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/invoicemanager/!svn/ver/2/trunk/WebRoot/css/jquery-ui-1.10.4.custom.min.css
+END
+font-awesome.min.css
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/invoicemanager/!svn/ver/4/trunk/WebRoot/css/font-awesome.min.css
+END
+bootstrap-spinner.css
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/invoicemanager/!svn/ver/4/trunk/WebRoot/css/bootstrap-spinner.css
+END

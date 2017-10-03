@@ -1,0 +1,133 @@
+10
+
+dir
+4
+https://127.0.0.1/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/WebRoot/WEB-INF/jsp
+https://127.0.0.1/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F
+
+
+
+2016-11-13T11:45:35.810331Z
+4
+skyboy
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+b87116e6-55e0-5947-bdac-aad22716bff4
+
+accountbook
+dir
+
+error
+dir
+
+indentclient
+dir
+
+index.jsp
+file
+37
+
+
+
+2016-11-13T11:47:54.505000Z
+c77ee38694f5c96ce9c39284f16d2c28
+2017-02-21T00:00:31.415356Z
+37
+skyboy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+302
+
+login.jsp
+file
+37
+
+
+
+2017-02-20T08:53:49.013000Z
+e3aad5b9aede264df1abc8ec93e374e8
+2017-02-21T00:00:31.415356Z
+37
+skyboy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4088
+
+maintainroom
+dir
+
+nohireroom
+dir
+
+resideclient
+dir
+
+roomreservation
+dir
+
+rooms
+dir
+
+
+
+delete
+
+roomstatus
+dir
+
+settleaccounts
+dir
+
+signbilltemplate
+dir
+

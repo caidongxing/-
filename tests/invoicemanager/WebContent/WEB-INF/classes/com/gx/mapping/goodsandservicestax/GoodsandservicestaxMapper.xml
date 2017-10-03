@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gx.dao.goodsandservicestax.GoodsandservicestaxMapper" >
+  <resultMap id="BaseResultMap" type="com.gx.po.goodsandservicestax.Goodsandservicestax" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="mergecoding" property="mergecoding" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="explains" property="explains" jdbcType="VARCHAR" />
+    <result column="taxrate" property="taxrate" jdbcType="DECIMAL" />
+    <result column="addedtaxmanagement" property="addedtaxmanagement" jdbcType="INTEGER" />
+    <result column="addedtaxpolicy" property="addedtaxpolicy" jdbcType="VARCHAR" />
+    <result column="addedtaxspecial" property="addedtaxspecial" jdbcType="VARCHAR" />
+    <result column="consumptiontaxadministration" property="consumptiontaxadministration" jdbcType="INTEGER" />
+    <result column="consumptiontaxpolicy" property="consumptiontaxpolicy" jdbcType="VARCHAR" />
+    <result column="specialconsumptiontax" property="specialconsumptiontax" jdbcType="VARCHAR" />
+    <result column="keyword" property="keyword" jdbcType="VARCHAR" />
+    <result column="statisticalofficecode" property="statisticalofficecode" jdbcType="VARCHAR" />
+    <result column="summaryitem" property="summaryitem" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, code, mergecoding, name, explains, taxrate, addedtaxmanagement, addedtaxpolicy, 
+    addedtaxspecial, consumptiontaxadministration, consumptiontaxpolicy, specialconsumptiontax, 
+    keyword, statisticalofficecode, summaryitem
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_goodsandservicestax
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sys_goodsandservicestax
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gx.po.goodsandservicestax.Goodsandservicestax" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_goodsandservicestax (code, mergecoding, name, 
+      explains, taxrate, addedtaxmanagement, 
+      addedtaxpolicy, addedtaxspecial, consumptiontaxadministration, 
+      consumptiontaxpolicy, specialconsumptiontax, 
+      keyword, statisticalofficecode, summaryitem
+      )
+    values (#{code,jdbcType=VARCHAR}, #{mergecoding,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{explains,jdbcType=VARCHAR}, #{taxrate,jdbcType=DECIMAL}, #{addedtaxmanagement,jdbcType=INTEGER}, 
+      #{addedtaxpolicy,jdbcType=VARCHAR}, #{addedtaxspecial,jdbcType=VARCHAR}, #{consumptiontaxadministration,jdbcType=INTEGER}, 
+      #{consumptiontaxpolicy,jdbcType=VARCHAR}, #{specialconsumptiontax,jdbcType=VARCHAR}, 
+      #{keyword,jdbcType=VARCHAR}, #{statisticalofficecode,jdbcType=VARCHAR}, #{summaryitem,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gx.po.goodsandservicestax.Goodsandservicestax" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_goodsandservicestax
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="mergecoding != null" >
+        mergecoding,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="explains != null" >
+        explains,
+      </if>
+      <if test="taxrate != null" >
+        taxrate,
+      </if>
+      <if test="addedtaxmanagement != null" >
+        addedtaxmanagement,
+      </if>
+      <if test="addedtaxpolicy != null" >
+        addedtaxpolicy,
+      </if>
+      <if test="addedtaxspecial != null" >
+        addedtaxspecial,
+      </if>
+      <if test="consumptiontaxadministration != null" >
+        consumptiontaxadministration,
+      </if>
+      <if test="consumptiontaxpolicy != null" >
+        consumptiontaxpolicy,
+      </if>
+      <if test="specialconsumptiontax != null" >
+        specialconsumptiontax,
+      </if>
+      <if test="keyword != null" >
+        keyword,
+      </if>
+      <if test="statisticalofficecode != null" >
+        statisticalofficecode,
+      </if>
+      <if test="summaryitem != null" >
+        summaryitem,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="mergecoding != null" >
+        #{mergecoding,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="explains != null" >
+        #{explains,jdbcType=VARCHAR},
+      </if>
+      <if test="taxrate != null" >
+        #{taxrate,jdbcType=DECIMAL},
+      </if>
+      <if test="addedtaxmanagement != null" >
+        #{addedtaxmanagement,jdbcType=INTEGER},
+      </if>
+      <if test="addedtaxpolicy != null" >
+        #{addedtaxpolicy,jdbcType=VARCHAR},
+      </if>
+      <if test="addedtaxspecial != null" >
+        #{addedtaxspecial,jdbcType=VARCHAR},
+      </if>
+      <if test="consumptiontaxadministration != null" >
+        #{consumptiontaxadministration,jdbcType=INTEGER},
+      </if>
+      <if test="consumptiontaxpolicy != null" >
+        #{consumptiontaxpolicy,jdbcType=VARCHAR},
+      </if>
+      <if test="specialconsumptiontax != null" >
+        #{specialconsumptiontax,jdbcType=VARCHAR},
+      </if>
+      <if test="keyword != null" >
+        #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="statisticalofficecode != null" >
+        #{statisticalofficecode,jdbcType=VARCHAR},
+      </if>
+      <if test="summaryitem != null" >
+        #{summaryitem,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gx.po.goodsandservicestax.Goodsandservicestax" >
+    update sys_goodsandservicestax
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="mergecoding != null" >
+        mergecoding = #{mergecoding,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="explains != null" >
+        explains = #{explains,jdbcType=VARCHAR},
+      </if>
+      <if test="taxrate != null" >
+        taxrate = #{taxrate,jdbcType=DECIMAL},
+      </if>
+      <if test="addedtaxmanagement != null" >
+        addedtaxmanagement = #{addedtaxmanagement,jdbcType=INTEGER},
+      </if>
+      <if test="addedtaxpolicy != null" >
+        addedtaxpolicy = #{addedtaxpolicy,jdbcType=VARCHAR},
+      </if>
+      <if test="addedtaxspecial != null" >
+        addedtaxspecial = #{addedtaxspecial,jdbcType=VARCHAR},
+      </if>
+      <if test="consumptiontaxadministration != null" >
+        consumptiontaxadministration = #{consumptiontaxadministration,jdbcType=INTEGER},
+      </if>
+      <if test="consumptiontaxpolicy != null" >
+        consumptiontaxpolicy = #{consumptiontaxpolicy,jdbcType=VARCHAR},
+      </if>
+      <if test="specialconsumptiontax != null" >
+        specialconsumptiontax = #{specialconsumptiontax,jdbcType=VARCHAR},
+      </if>
+      <if test="keyword != null" >
+        keyword = #{keyword,jdbcType=VARCHAR},
+      </if>
+      <if test="statisticalofficecode != null" >
+        statisticalofficecode = #{statisticalofficecode,jdbcType=VARCHAR},
+      </if>
+      <if test="summaryitem != null" >
+        summaryitem = #{summaryitem,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gx.po.goodsandservicestax.Goodsandservicestax" >
+    update sys_goodsandservicestax
+    set code = #{code,jdbcType=VARCHAR},
+      mergecoding = #{mergecoding,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      explains = #{explains,jdbcType=VARCHAR},
+      taxrate = #{taxrate,jdbcType=DECIMAL},
+      addedtaxmanagement = #{addedtaxmanagement,jdbcType=INTEGER},
+      addedtaxpolicy = #{addedtaxpolicy,jdbcType=VARCHAR},
+      addedtaxspecial = #{addedtaxspecial,jdbcType=VARCHAR},
+      consumptiontaxadministration = #{consumptiontaxadministration,jdbcType=INTEGER},
+      consumptiontaxpolicy = #{consumptiontaxpolicy,jdbcType=VARCHAR},
+      specialconsumptiontax = #{specialconsumptiontax,jdbcType=VARCHAR},
+      keyword = #{keyword,jdbcType=VARCHAR},
+      statisticalofficecode = #{statisticalofficecode,jdbcType=VARCHAR},
+      summaryitem = #{summaryitem,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findAll" resultType="com.gx.po.goodsandservicestax.Goodsandservicestax">
+  	select * from sys_goodsandservicestax
+	ORDER BY sys_goodsandservicestax.id DESC
+  </select>
+</mapper>

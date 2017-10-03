@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hy.dao.NohireroomMapper" >
+  <resultMap id="BaseResultMap" type="com.hy.po.Nohireroom" >
+    <id column="nohireroomid" property="nohireroomid" jdbcType="INTEGER" />
+    <result column="roomsid" property="roomsid" jdbcType="INTEGER" />
+    <result column="starttime" property="starttime" jdbcType="TIMESTAMP" />
+    <result column="endtime" property="endtime" jdbcType="TIMESTAMP" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    nohireroomid, roomsid, starttime, endtime, reason, comment, status
+  </sql>
+  
+  <select id="findByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    SELECT nohireroom.*,rooms.roomnumber FROM nohireroom INNER JOIN rooms ON nohireroom.roomsid = rooms.roomsid
+
+    where nohireroomid = #{nohireroomid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="queryPage" resultMap="BaseResultMap" >
+    SELECT nohireroom.*,rooms.roomnumber FROM nohireroom INNER JOIN rooms ON nohireroom.roomsid = rooms.roomsid
+
+    where 1=1
+    <if test="status != null &amp; status != ''" >
+       and status = #{status,jdbcType=INTEGER}
+    </if>
+    <if test="starnumber != null &amp; endnumber != null">
+      and roomnumber &gt;= #{starnumber,jdbcType=INTEGER}
+	  and roomnumber &lt;= #{endnumber,jdbcType=INTEGER}
+    </if>
+    LIMIT #{firstResult} ,#{pageSize}
+  </select>
+  
+  <select id="count" resultType="java.lang.Integer">
+    SELECT COUNT(1)
+    FROM nohireroom INNER JOIN rooms ON nohireroom.roomsid = rooms.roomsid
+    where 1=1
+    <if test="status != null &amp; status != ''" >
+       and status = #{status,jdbcType=INTEGER}
+    </if>
+    <if test="starnumber != null &amp; endnumber != null">
+      and roomnumber &gt;= #{starnumber,jdbcType=INTEGER}
+	  and roomnumber &lt;= #{endnumber,jdbcType=INTEGER}
+    </if>
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from nohireroom
+    where nohireroomid = #{nohireroomid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from nohireroom
+    where nohireroomid = #{nohireroomid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hy.po.Nohireroom" >
+    <selectKey resultType="java.lang.Integer" keyProperty="nohireroomid" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into nohireroom (roomsid, starttime, endtime, 
+      reason, comment,status)
+    values (#{roomsid,jdbcType=INTEGER}, #{starttime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, 
+      #{reason,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR},#{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hy.po.Nohireroom" >
+    <selectKey resultType="java.lang.Integer" keyProperty="nohireroomid" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into nohireroom
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="roomsid != null" >
+        roomsid,
+      </if>
+      <if test="starttime != null" >
+        starttime,
+      </if>
+      <if test="endtime != null" >
+        endtime,
+      </if>
+      <if test="reason != null" >
+        reason,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="roomsid != null" >
+        #{roomsid,jdbcType=INTEGER},
+      </if>
+      <if test="starttime != null" >
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null" >
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reason != null" >
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hy.po.Nohireroom" >
+    update nohireroom
+    <set >
+      <if test="roomsid != null" >
+        roomsid = #{roomsid,jdbcType=INTEGER},
+      </if>
+      <if test="starttime != null" >
+        starttime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null" >
+        endtime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where nohireroomid = #{nohireroomid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hy.po.Nohireroom" >
+    update nohireroom
+    set roomsid = #{roomsid,jdbcType=INTEGER},
+      starttime = #{starttime,jdbcType=TIMESTAMP},
+      endtime = #{endtime,jdbcType=TIMESTAMP},
+      reason = #{reason,jdbcType=VARCHAR},
+      comment = #{comment,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where nohireroomid = #{nohireroomid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gx.dao.taxitem.TaxitemMapper" >
+  <resultMap id="BaseResultMap" type="com.gx.po.taxitem.Taxitem" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="taxcategory" property="taxcategory" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="taxrate" property="taxrate" jdbcType="VARCHAR" />
+    <result column="percentagecharges" property="percentagecharges" jdbcType="DECIMAL" />
+    <result column="nonauthorizedmark" property="nonauthorizedmark" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, taxcategory, code, name, taxrate, percentagecharges, nonauthorizedmark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_taxitem
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from sys_taxitem
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.gx.po.taxitem.Taxitem" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_taxitem (taxcategory, code, name, 
+      taxrate, percentagecharges, nonauthorizedmark
+      )
+    values (#{taxcategory,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{taxrate,jdbcType=VARCHAR}, #{percentagecharges,jdbcType=DECIMAL}, #{nonauthorizedmark,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gx.po.taxitem.Taxitem" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_taxitem
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="taxcategory != null" >
+        taxcategory,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="taxrate != null" >
+        taxrate,
+      </if>
+      <if test="percentagecharges != null" >
+        percentagecharges,
+      </if>
+      <if test="nonauthorizedmark != null" >
+        nonauthorizedmark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="taxcategory != null" >
+        #{taxcategory,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="taxrate != null" >
+        #{taxrate,jdbcType=VARCHAR},
+      </if>
+      <if test="percentagecharges != null" >
+        #{percentagecharges,jdbcType=DECIMAL},
+      </if>
+      <if test="nonauthorizedmark != null" >
+        #{nonauthorizedmark,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.gx.po.taxitem.Taxitem" >
+    update sys_taxitem
+    <set >
+      <if test="taxcategory != null" >
+        taxcategory = #{taxcategory,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="taxrate != null" >
+        taxrate = #{taxrate,jdbcType=VARCHAR},
+      </if>
+      <if test="percentagecharges != null" >
+        percentagecharges = #{percentagecharges,jdbcType=DECIMAL},
+      </if>
+      <if test="nonauthorizedmark != null" >
+        nonauthorizedmark = #{nonauthorizedmark,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.gx.po.taxitem.Taxitem" >
+    update sys_taxitem
+    set taxcategory = #{taxcategory,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      taxrate = #{taxrate,jdbcType=VARCHAR},
+      percentagecharges = #{percentagecharges,jdbcType=DECIMAL},
+      nonauthorizedmark = #{nonauthorizedmark,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="findAll" resultType="com.gx.po.taxitem.Taxitem">
+  	SELECT * FROM sys_taxitem
+	ORDER BY sys_taxitem.id DESC
+  </select>
+</mapper>

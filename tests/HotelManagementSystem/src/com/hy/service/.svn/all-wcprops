@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/4/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service
+END
+CreditcardService.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/18/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/CreditcardService.java
+END
+MembercardService.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/18/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/MembercardService.java
+END
+UserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/37/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/UserService.java
+END
+FloorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/4/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/FloorService.java
+END
+AccountService.java
+K 25
+svn:wc:ra_dav:version-url
+V 201
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/26/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/AccountService.java
+END
+SalesmanService.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/16/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/SalesmanService.java
+END
+AignbilltemplateService.java
+K 25
+svn:wc:ra_dav:version-url
+V 210
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/26/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/AignbilltemplateService.java
+END
+NohireroomService.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/36/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/NohireroomService.java
+END
+BaseService.java
+K 25
+svn:wc:ra_dav:version-url
+V 197
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/4/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/BaseService.java
+END
+RoomreservationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 209
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/22/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/RoomreservationService.java
+END
+SettleaccountsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 208
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/38/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/SettleaccountsService.java
+END
+AccountitemsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 205
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/9/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/AccountitemsService.java
+END
+RoomtypeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 201
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/8/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/RoomtypeService.java
+END
+AgreementclientService.java
+K 25
+svn:wc:ra_dav:version-url
+V 209
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/16/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/AgreementclientService.java
+END
+SignbilldetailService.java
+K 25
+svn:wc:ra_dav:version-url
+V 208
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/38/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/SignbilldetailService.java
+END
+AccountbookService.java
+K 25
+svn:wc:ra_dav:version-url
+V 205
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/25/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/AccountbookService.java
+END
+RoleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/20/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/RoleService.java
+END
+RoomsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 199
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/36/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/RoomsService.java
+END
+TemplateandaccountbookService.java
+K 25
+svn:wc:ra_dav:version-url
+V 216
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/15/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/TemplateandaccountbookService.java
+END
+ClientinfoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 204
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/17/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/ClientinfoService.java
+END
+CharacteristicService.java
+K 25
+svn:wc:ra_dav:version-url
+V 207
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/4/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/CharacteristicService.java
+END
+TimedTaskService.java
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/36/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/TimedTaskService.java
+END
+TeamService.java
+K 25
+svn:wc:ra_dav:version-url
+V 198
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/16/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/TeamService.java
+END
+OtherinfoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/21/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/OtherinfoService.java
+END
+AccountbookanditemsService.java
+K 25
+svn:wc:ra_dav:version-url
+V 213
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/38/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/AccountbookanditemsService.java
+END
+RoomreservationdetailService.java
+K 25
+svn:wc:ra_dav:version-url
+V 215
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/38/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/RoomreservationdetailService.java
+END
+SignbillService.java
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/33/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/service/SignbillService.java
+END

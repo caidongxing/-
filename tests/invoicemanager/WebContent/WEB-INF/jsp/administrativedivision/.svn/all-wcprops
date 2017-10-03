@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/invoicemanager/!svn/ver/19/trunk/WebRoot/WEB-INF/jsp/administrativedivision
+END
+administrativedivision_update.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/invoicemanager/!svn/ver/19/trunk/WebRoot/WEB-INF/jsp/administrativedivision/administrativedivision_update.jsp
+END
+administrativedivision_add.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/invoicemanager/!svn/ver/19/trunk/WebRoot/WEB-INF/jsp/administrativedivision/administrativedivision_add.jsp
+END
+administrativedivision_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/invoicemanager/!svn/ver/19/trunk/WebRoot/WEB-INF/jsp/administrativedivision/administrativedivision_list.jsp
+END

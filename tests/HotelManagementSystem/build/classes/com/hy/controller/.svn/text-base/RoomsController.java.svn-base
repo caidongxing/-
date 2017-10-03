@@ -1,0 +1,21 @@
+package com.hy.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+@Controller
+@RequestMapping("roomsController")
+public class RoomsController extends BaseController {
+	
+	@RequestMapping("roomsStatus")
+	public String RoomsStatus() throws Exception{
+		return "/rooms/roomstatus";
+	}
+	
+	@RequestMapping("add")
+	public String add() throws Exception{
+		return "/rooms/roomstatus";
+	}
+
+}

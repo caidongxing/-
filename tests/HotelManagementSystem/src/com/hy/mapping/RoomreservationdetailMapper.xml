@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hy.dao.RoomreservationdetailMapper" >
+  <resultMap id="BaseResultMap" type="com.hy.po.Roomreservationdetail" >
+    <id column="detailid" property="detailid" jdbcType="INTEGER" />
+    <result column="reservationtype" property="reservationtype" jdbcType="INTEGER" />
+    <result column="choosehouseclaim" property="choosehouseclaim" jdbcType="VARCHAR" />
+    <result column="arrivedate" property="arrivedate" jdbcType="TIMESTAMP" />
+    <result column="leavedate" property="leavedate" jdbcType="TIMESTAMP" />
+    <result column="packageid" property="packageid" jdbcType="INTEGER" />
+    <result column="roomtype" property="roomtype" jdbcType="INTEGER" />
+    <result column="tenantablenumber" property="tenantablenumber" jdbcType="INTEGER" />
+    <result column="obligateroomdate" property="obligateroomdate" jdbcType="TIMESTAMP" />
+    <result column="roompricecodeid" property="roompricecodeid" jdbcType="INTEGER" />
+    <result column="realprice" property="realprice" jdbcType="DECIMAL" />
+    <result column="standardprice" property="standardprice" jdbcType="DECIMAL" />
+    <result column="currencytype" property="currencytype" jdbcType="INTEGER" />
+    <result column="roomnumber" property="roomnumber" jdbcType="INTEGER" />
+    <result column="freebed" property="freebed" jdbcType="INTEGER" />
+    <result column="adult" property="adult" jdbcType="INTEGER" />
+    <result column="children" property="children" jdbcType="INTEGER" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+    <result column="roomreservationid" property="roomreservationid" jdbcType="INTEGER" />
+    <result column="accountid" property="accountid" jdbcType="INTEGER" />
+    <result column="payway" property="payway" jdbcType="INTEGER" />
+    <result column="cashpledge" property="cashpledge" jdbcType="DECIMAL" />
+    <result column="mainroomid" property="mainroomid" jdbcType="INTEGER" />
+    <result column="roomstatus" property="roomstatus" jdbcType="INTEGER" />
+    <result column="roomsid" property="roomsid" jdbcType="INTEGER" />
+    <result column="clientinfoid" property="clientinfoid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    detailid, reservationtype, choosehouseclaim, arrivedate, leavedate, packageid, roomtype, 
+    tenantablenumber, obligateroomdate, roompricecodeid, realprice, standardprice, currencytype, 
+    roomnumber, freebed, adult, children, comment, roomreservationid, accountid, payway, 
+    cashpledge, mainroomid, roomstatus, roomsid, clientinfoid
+  </sql>
+  
+  <select id="querySettleAccountsList" resultType="com.hy.vo.RoomReservationDetail" parameterType="com.hy.vo.SettleAccountsParam">
+   SELECT rr.reservationnumber,r.roomnumber AS roommark,t.teamname,ci.chinesename,ci.idnumber,c.accountbalance,
+   rt.roomtypename,rrd.detailid,rrd.accountid,rrd.arrivedate,rrd.leavedate,rrd.realprice,rrd.roomstatus
+FROM roomreservationdetail rrd 
+LEFT JOIN roomreservation rr ON rrd.roomreservationid = rr.roomreservationid
+LEFT JOIN rooms r ON rrd.roomsid = r.roomsid
+LEFT JOIN clientinfo ci ON rrd.clientinfoid = ci.clientinfoid
+LEFT JOIN roomtype rt ON rrd.roomtype = rt.roomtypeid
+LEFT JOIN account c ON rrd.accountid = c.accountid
+left JOIN team t on rr.teamid = t.teamid
+
+    WHERE 1 = 1
+    <if test="teamname != null &amp; teamname != ''" >
+       and t.teamname LIKE CONCAT('%', #{teamname,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="roomnumber != null &amp; roomnumber != ''" >
+       and r.roomnumber LIKE CONCAT('%', #{roomnumber,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="name != null &amp; name != ''" >
+       and ci.chinesename LIKE CONCAT('%', #{name,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="reside != null &amp; reside != ''" >
+       and rrd.roomstatus = #{reside,jdbcType=INTEGER}
+    </if>
+    <if test="abolish != null &amp; abolish != ''" >
+       or rrd.roomstatus = #{abolish,jdbcType=INTEGER}
+    </if>
+    <if test="reservation != null &amp; reservation != ''" >
+       or rrd.roomstatus = #{reservation,jdbcType=INTEGER}
+    </if>
+    <if test="leave != null &amp; leave != ''" >
+       or rrd.roomstatus = #{leave,jdbcType=INTEGER}
+    </if>
+    
+    ORDER BY rrd.detailid DESC
+  </select>
+  
+  <update id="alterByPrimaryKey" parameterType="com.hy.po.Roomreservationdetail" >
+    update roomreservationdetail
+    set roomsid = #{roomsid,jdbcType=INTEGER}
+    where detailid = #{detailid,jdbcType=INTEGER}
+  </update>
+  
+  <select id="queryByDetailId" resultType="com.hy.vo.RoomReservationDetail" parameterType="java.lang.Integer">
+    SELECT rr.reservationnumber,t.teamname,ac.agreementclientname,r.roomnumber as roommark,
+ci.chinesename,ci.sex,c.accountbalance,rt.roomtypename,rrd.* 
+from roomreservationdetail rrd 
+left JOIN roomreservation rr on rrd.roomreservationid = rr.roomreservationid
+LEFT JOIN rooms r ON rrd.roomsid = r.roomsid
+LEFT JOIN clientinfo ci ON rrd.clientinfoid = ci.clientinfoid
+LEFT JOIN account c ON rrd.accountid = c.accountid
+LEFT JOIN roomtype rt ON rrd.roomtype = rt.roomtypeid
+left JOIN team t on rr.teamid = t.teamid
+left JOIN agreementclient ac on rr.agreementclientid = ac.agreementclientid
+
+    WHERE rrd.detailid = #{detailid,jdbcType=INTEGER}
+    
+  </select>
+  
+  <select id="queryByRoomsId" resultType="com.hy.vo.RoomReservationDetail">
+    SELECT rr.reservationnumber,t.teamname,ac.agreementclientname,r.roomnumber as roommark,
+ci.chinesename,ci.sex,c.accountbalance,rt.roomtypename,rrd.* 
+from roomreservationdetail rrd 
+left JOIN roomreservation rr on rrd.roomreservationid = rr.roomreservationid
+LEFT JOIN rooms r ON rrd.roomsid = r.roomsid
+LEFT JOIN clientinfo ci ON rrd.clientinfoid = ci.clientinfoid
+LEFT JOIN account c ON rrd.accountid = c.accountid
+LEFT JOIN roomtype rt ON rrd.roomtype = rt.roomtypeid
+left JOIN team t on rr.teamid = t.teamid
+left JOIN agreementclient ac on rr.agreementclientid = ac.agreementclientid
+
+    WHERE rrd.roomsid = #{roomsid,jdbcType=INTEGER} 
+    and rrd.roomstatus = #{roomstatus,jdbcType=INTEGER}
+    
+  </select>
+  
+  <select id="queryPage" resultType="com.hy.vo.RoomReservationDetail" parameterType="com.hy.vo.RoomReservationDetailParam">
+    SELECT rr.reservationnumber,t.teamname,ac.agreementclientname,r.roomnumber as roommark,
+ci.chinesename,ci.sex,c.accountbalance,rt.roomtypename,rrd.* 
+from roomreservationdetail rrd 
+left JOIN roomreservation rr on rrd.roomreservationid = rr.roomreservationid
+LEFT JOIN rooms r ON rrd.roomsid = r.roomsid
+LEFT JOIN clientinfo ci ON rrd.clientinfoid = ci.clientinfoid
+LEFT JOIN account c ON rrd.accountid = c.accountid
+LEFT JOIN roomtype rt ON rrd.roomtype = rt.roomtypeid
+left JOIN team t on rr.teamid = t.teamid
+left JOIN agreementclient ac on rr.agreementclientid = ac.agreementclientid
+
+    WHERE 1 = 1
+    <if test="teamname != null &amp; teamname != ''" >
+       and t.teamname LIKE CONCAT('%', #{teamname,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="roomnumber != null &amp; roomnumber != ''" >
+       and r.roomnumber LIKE CONCAT('%', #{roomnumber,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="chinesename != null &amp; chinesename != ''" >
+       and ci.chinesename LIKE CONCAT('%', #{chinesename,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="agreementclientname != null &amp; agreementclientname != ''" >
+       and ac.agreementclientname LIKE CONCAT('%', #{agreementclientname,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="roomstatus != null &amp; roomstatus != ''" >
+       and rrd.roomstatus = #{roomstatus,jdbcType=INTEGER}
+    </if>
+    
+    ORDER BY rrd.detailid DESC
+    LIMIT #{firstResult} ,#{pageSize}
+  </select>
+  
+  <select id="count" resultType="java.lang.Integer" parameterType="com.hy.vo.RoomReservationDetailParam">
+    SELECT count(1)
+from roomreservationdetail rrd 
+left JOIN roomreservation rr on rrd.roomreservationid = rr.roomreservationid
+LEFT JOIN rooms r ON rrd.roomsid = r.roomsid
+LEFT JOIN clientinfo ci ON rrd.clientinfoid = ci.clientinfoid
+LEFT JOIN account c ON rrd.accountid = c.accountid
+LEFT JOIN roomtype rt ON rrd.roomtype = rt.roomtypeid
+left JOIN team t on rr.teamid = t.teamid
+left JOIN agreementclient ac on rr.agreementclientid = ac.agreementclientid
+    WHERE 1 = 1
+    <if test="teamname != null &amp; teamname != ''" >
+       and t.teamname LIKE CONCAT('%', #{teamname,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="roomnumber != null &amp; roomnumber != ''" >
+       and r.roomnumber LIKE CONCAT('%', #{roomnumber,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="chinesename != null &amp; chinesename != ''" >
+       and ci.chinesename LIKE CONCAT('%', #{chinesename,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="agreementclientname != null &amp; agreementclientname != ''" >
+       and ac.agreementclientname LIKE CONCAT('%', #{agreementclientname,jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="roomstatus != null &amp; roomstatus != ''" >
+       and rrd.roomstatus = #{roomstatus,jdbcType=INTEGER}
+    </if>
+  </select>
+  
+  <update id="abolishByForeignKey">
+    update roomreservationdetail
+    set roomstatus = #{roomstatus,jdbcType=INTEGER}
+      
+    where roomreservationid = #{roomreservationid,jdbcType=INTEGER}
+  </update>
+  
+  <select id="findByPrimaryKey" resultType="com.hy.po.Roomreservationdetail" parameterType="java.lang.Integer">
+    SELECT rrd.*,rt.roomtypename 
+    FROM roomreservationdetail rrd
+    LEFT JOIN roomtype rt ON rrd.roomtype = rt.roomtypeid
+    
+    WHERE rrd.detailid = #{detailid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="findByForeignKey" resultType="com.hy.po.Roomreservationdetail" parameterType="java.lang.Integer">
+    SELECT rrd.*,r.roomnumber as roommark,p.packagename,c.chinesename,rt.roomtypename from roomreservationdetail rrd left JOIN rooms r on rrd.roomsid = r.roomsid
+    left JOIN package p on rrd.packageid = p.packageid left JOIN clientinfo c on rrd.clientinfoid = c.clientinfoid
+    left JOIN roomtype rt on rrd.roomtype = rt.roomtypeid
+    
+    WHERE rrd.roomreservationid = #{roomreservationid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="findAll" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from roomreservationdetail
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from roomreservationdetail
+    where detailid = #{detailid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from roomreservationdetail
+    where detailid = #{detailid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hy.po.Roomreservationdetail" >
+    insert into roomreservationdetail (detailid, reservationtype, choosehouseclaim, 
+      arrivedate, leavedate, packageid, 
+      roomtype, tenantablenumber, obligateroomdate, 
+      roompricecodeid, realprice, standardprice, 
+      currencytype, roomnumber, freebed, 
+      adult, children, comment, 
+      roomreservationid, accountid, payway, 
+      cashpledge, mainroomid, roomstatus, 
+      roomsid, clientinfoid)
+    values (#{detailid,jdbcType=INTEGER}, #{reservationtype,jdbcType=INTEGER}, #{choosehouseclaim,jdbcType=VARCHAR}, 
+      #{arrivedate,jdbcType=TIMESTAMP}, #{leavedate,jdbcType=TIMESTAMP}, #{packageid,jdbcType=INTEGER}, 
+      #{roomtype,jdbcType=INTEGER}, #{tenantablenumber,jdbcType=INTEGER}, #{obligateroomdate,jdbcType=TIMESTAMP}, 
+      #{roompricecodeid,jdbcType=INTEGER}, #{realprice,jdbcType=DECIMAL}, #{standardprice,jdbcType=DECIMAL}, 
+      #{currencytype,jdbcType=INTEGER}, #{roomnumber,jdbcType=INTEGER}, #{freebed,jdbcType=INTEGER}, 
+      #{adult,jdbcType=INTEGER}, #{children,jdbcType=INTEGER}, #{comment,jdbcType=VARCHAR}, 
+      #{roomreservationid,jdbcType=INTEGER}, #{accountid,jdbcType=INTEGER}, #{payway,jdbcType=INTEGER}, 
+      #{cashpledge,jdbcType=DECIMAL}, #{mainroomid,jdbcType=INTEGER}, #{roomstatus,jdbcType=INTEGER}, 
+      #{roomsid,jdbcType=INTEGER}, #{clientinfoid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hy.po.Roomreservationdetail" >
+    insert into roomreservationdetail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="detailid != null" >
+        detailid,
+      </if>
+      <if test="reservationtype != null" >
+        reservationtype,
+      </if>
+      <if test="choosehouseclaim != null" >
+        choosehouseclaim,
+      </if>
+      <if test="arrivedate != null" >
+        arrivedate,
+      </if>
+      <if test="leavedate != null" >
+        leavedate,
+      </if>
+      <if test="packageid != null" >
+        packageid,
+      </if>
+      <if test="roomtype != null" >
+        roomtype,
+      </if>
+      <if test="tenantablenumber != null" >
+        tenantablenumber,
+      </if>
+      <if test="obligateroomdate != null" >
+        obligateroomdate,
+      </if>
+      <if test="roompricecodeid != null" >
+        roompricecodeid,
+      </if>
+      <if test="realprice != null" >
+        realprice,
+      </if>
+      <if test="standardprice != null" >
+        standardprice,
+      </if>
+      <if test="currencytype != null" >
+        currencytype,
+      </if>
+      <if test="roomnumber != null" >
+        roomnumber,
+      </if>
+      <if test="freebed != null" >
+        freebed,
+      </if>
+      <if test="adult != null" >
+        adult,
+      </if>
+      <if test="children != null" >
+        children,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+      <if test="roomreservationid != null" >
+        roomreservationid,
+      </if>
+      <if test="accountid != null" >
+        accountid,
+      </if>
+      <if test="payway != null" >
+        payway,
+      </if>
+      <if test="cashpledge != null" >
+        cashpledge,
+      </if>
+      <if test="mainroomid != null" >
+        mainroomid,
+      </if>
+      <if test="roomstatus != null" >
+        roomstatus,
+      </if>
+      <if test="roomsid != null" >
+        roomsid,
+      </if>
+      <if test="clientinfoid != null" >
+        clientinfoid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="detailid != null" >
+        #{detailid,jdbcType=INTEGER},
+      </if>
+      <if test="reservationtype != null" >
+        #{reservationtype,jdbcType=INTEGER},
+      </if>
+      <if test="choosehouseclaim != null" >
+        #{choosehouseclaim,jdbcType=VARCHAR},
+      </if>
+      <if test="arrivedate != null" >
+        #{arrivedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leavedate != null" >
+        #{leavedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="packageid != null" >
+        #{packageid,jdbcType=INTEGER},
+      </if>
+      <if test="roomtype != null" >
+        #{roomtype,jdbcType=INTEGER},
+      </if>
+      <if test="tenantablenumber != null" >
+        #{tenantablenumber,jdbcType=INTEGER},
+      </if>
+      <if test="obligateroomdate != null" >
+        #{obligateroomdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="roompricecodeid != null" >
+        #{roompricecodeid,jdbcType=INTEGER},
+      </if>
+      <if test="realprice != null" >
+        #{realprice,jdbcType=DECIMAL},
+      </if>
+      <if test="standardprice != null" >
+        #{standardprice,jdbcType=DECIMAL},
+      </if>
+      <if test="currencytype != null" >
+        #{currencytype,jdbcType=INTEGER},
+      </if>
+      <if test="roomnumber != null" >
+        #{roomnumber,jdbcType=INTEGER},
+      </if>
+      <if test="freebed != null" >
+        #{freebed,jdbcType=INTEGER},
+      </if>
+      <if test="adult != null" >
+        #{adult,jdbcType=INTEGER},
+      </if>
+      <if test="children != null" >
+        #{children,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="roomreservationid != null" >
+        #{roomreservationid,jdbcType=INTEGER},
+      </if>
+      <if test="accountid != null" >
+        #{accountid,jdbcType=INTEGER},
+      </if>
+      <if test="payway != null" >
+        #{payway,jdbcType=INTEGER},
+      </if>
+      <if test="cashpledge != null" >
+        #{cashpledge,jdbcType=DECIMAL},
+      </if>
+      <if test="mainroomid != null" >
+        #{mainroomid,jdbcType=INTEGER},
+      </if>
+      <if test="roomstatus != null" >
+        #{roomstatus,jdbcType=INTEGER},
+      </if>
+      <if test="roomsid != null" >
+        #{roomsid,jdbcType=INTEGER},
+      </if>
+      <if test="clientinfoid != null" >
+        #{clientinfoid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hy.po.Roomreservationdetail" >
+    update roomreservationdetail
+    <set >
+      <if test="reservationtype != null" >
+        reservationtype = #{reservationtype,jdbcType=INTEGER},
+      </if>
+      <if test="choosehouseclaim != null" >
+        choosehouseclaim = #{choosehouseclaim,jdbcType=VARCHAR},
+      </if>
+      <if test="arrivedate != null" >
+        arrivedate = #{arrivedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leavedate != null" >
+        leavedate = #{leavedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="packageid != null" >
+        packageid = #{packageid,jdbcType=INTEGER},
+      </if>
+      <if test="roomtype != null" >
+        roomtype = #{roomtype,jdbcType=INTEGER},
+      </if>
+      <if test="tenantablenumber != null" >
+        tenantablenumber = #{tenantablenumber,jdbcType=INTEGER},
+      </if>
+      <if test="obligateroomdate != null" >
+        obligateroomdate = #{obligateroomdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="roompricecodeid != null" >
+        roompricecodeid = #{roompricecodeid,jdbcType=INTEGER},
+      </if>
+      <if test="realprice != null" >
+        realprice = #{realprice,jdbcType=DECIMAL},
+      </if>
+      <if test="standardprice != null" >
+        standardprice = #{standardprice,jdbcType=DECIMAL},
+      </if>
+      <if test="currencytype != null" >
+        currencytype = #{currencytype,jdbcType=INTEGER},
+      </if>
+      <if test="roomnumber != null" >
+        roomnumber = #{roomnumber,jdbcType=INTEGER},
+      </if>
+      <if test="freebed != null" >
+        freebed = #{freebed,jdbcType=INTEGER},
+      </if>
+      <if test="adult != null" >
+        adult = #{adult,jdbcType=INTEGER},
+      </if>
+      <if test="children != null" >
+        children = #{children,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="roomreservationid != null" >
+        roomreservationid = #{roomreservationid,jdbcType=INTEGER},
+      </if>
+      <if test="accountid != null" >
+        accountid = #{accountid,jdbcType=INTEGER},
+      </if>
+      <if test="payway != null" >
+        payway = #{payway,jdbcType=INTEGER},
+      </if>
+      <if test="cashpledge != null" >
+        cashpledge = #{cashpledge,jdbcType=DECIMAL},
+      </if>
+      <if test="mainroomid != null" >
+        mainroomid = #{mainroomid,jdbcType=INTEGER},
+      </if>
+      <if test="roomstatus != null" >
+        roomstatus = #{roomstatus,jdbcType=INTEGER},
+      </if>
+      <if test="roomsid != null" >
+        roomsid = #{roomsid,jdbcType=INTEGER},
+      </if>
+      <if test="clientinfoid != null" >
+        clientinfoid = #{clientinfoid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where detailid = #{detailid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hy.po.Roomreservationdetail" >
+    update roomreservationdetail
+    set reservationtype = #{reservationtype,jdbcType=INTEGER},
+      choosehouseclaim = #{choosehouseclaim,jdbcType=VARCHAR},
+      arrivedate = #{arrivedate,jdbcType=TIMESTAMP},
+      leavedate = #{leavedate,jdbcType=TIMESTAMP},
+      packageid = #{packageid,jdbcType=INTEGER},
+      roomtype = #{roomtype,jdbcType=INTEGER},
+      tenantablenumber = #{tenantablenumber,jdbcType=INTEGER},
+      obligateroomdate = #{obligateroomdate,jdbcType=TIMESTAMP},
+      roompricecodeid = #{roompricecodeid,jdbcType=INTEGER},
+      realprice = #{realprice,jdbcType=DECIMAL},
+      standardprice = #{standardprice,jdbcType=DECIMAL},
+      currencytype = #{currencytype,jdbcType=INTEGER},
+      roomnumber = #{roomnumber,jdbcType=INTEGER},
+      freebed = #{freebed,jdbcType=INTEGER},
+      adult = #{adult,jdbcType=INTEGER},
+      children = #{children,jdbcType=INTEGER},
+      comment = #{comment,jdbcType=VARCHAR},
+      roomreservationid = #{roomreservationid,jdbcType=INTEGER},
+      accountid = #{accountid,jdbcType=INTEGER},
+      payway = #{payway,jdbcType=INTEGER},
+      cashpledge = #{cashpledge,jdbcType=DECIMAL},
+      mainroomid = #{mainroomid,jdbcType=INTEGER},
+      roomstatus = #{roomstatus,jdbcType=INTEGER},
+      roomsid = #{roomsid,jdbcType=INTEGER},
+      clientinfoid = #{clientinfoid,jdbcType=INTEGER}
+    where detailid = #{detailid,jdbcType=INTEGER}
+  </update>
+</mapper>

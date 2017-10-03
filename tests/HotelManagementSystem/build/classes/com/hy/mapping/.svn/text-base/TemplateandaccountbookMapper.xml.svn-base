@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hy.dao.TemplateandaccountbookMapper" >
+  <resultMap id="BaseResultMap" type="com.hy.po.Templateandaccountbook" >
+    <id column="templateandaccountbookid" property="templateandaccountbookid" jdbcType="INTEGER" />
+    <result column="accountbookid" property="accountbookid" jdbcType="INTEGER" />
+    <result column="signbilltemplateid" property="signbilltemplateid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    templateandaccountbookid, accountbookid, signbilltemplateid
+  </sql>
+ 
+  
+  <select id="findByPrimaryKey" resultType="com.hy.po.Templateandaccountbook" parameterType="java.lang.Integer" >
+    SELECT ta.*,ab.accountbookcode,ab.accountbookname,ab.transferaccountswayid,ab.quota,st.templatename FROM templateandaccountbook ta
+INNER JOIN accountbook ab ON ta.accountbookid = ab.accountbookid
+INNER JOIN signbilltemplate st ON ta.signbilltemplateid = st.signbilltemplateid
+WHERE ta.signbilltemplateid = #{signbilltemplateid,jdbcType=INTEGER}
+  </select>
+ 
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from templateandaccountbook
+    where templateandaccountbookid = #{templateandaccountbookid,jdbcType=INTEGER}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from templateandaccountbook
+    where signbilltemplateid = #{signbilltemplateid,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.hy.po.Templateandaccountbook" >
+    insert into templateandaccountbook (templateandaccountbookid, accountbookid, 
+      signbilltemplateid)
+    values (#{templateandaccountbookid,jdbcType=INTEGER}, #{accountbookid,jdbcType=INTEGER}, 
+      #{signbilltemplateid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hy.po.Templateandaccountbook" >
+    insert into templateandaccountbook
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="templateandaccountbookid != null" >
+        templateandaccountbookid,
+      </if>
+      <if test="accountbookid != null" >
+        accountbookid,
+      </if>
+      <if test="signbilltemplateid != null" >
+        signbilltemplateid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="templateandaccountbookid != null" >
+        #{templateandaccountbookid,jdbcType=INTEGER},
+      </if>
+      <if test="accountbookid != null" >
+        #{accountbookid,jdbcType=INTEGER},
+      </if>
+      <if test="signbilltemplateid != null" >
+        #{signbilltemplateid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hy.po.Templateandaccountbook" >
+    update templateandaccountbook
+    <set >
+      <if test="accountbookid != null" >
+        accountbookid = #{accountbookid,jdbcType=INTEGER},
+      </if>
+      <if test="signbilltemplateid != null" >
+        signbilltemplateid = #{signbilltemplateid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where templateandaccountbookid = #{templateandaccountbookid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hy.po.Templateandaccountbook" >
+    update templateandaccountbook
+    set accountbookid = #{accountbookid,jdbcType=INTEGER},
+      signbilltemplateid = #{signbilltemplateid,jdbcType=INTEGER}
+    where templateandaccountbookid = #{templateandaccountbookid,jdbcType=INTEGER}
+  </update>
+</mapper>

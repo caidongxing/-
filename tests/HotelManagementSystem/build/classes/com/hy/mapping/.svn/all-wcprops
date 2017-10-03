@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 180
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/4/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping
+END
+AccountbookMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/36/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/AccountbookMapper.xml
+END
+RoleMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/20/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/RoleMapper.xml
+END
+RoomsMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 197
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/36/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/RoomsMapper.xml
+END
+TemplateandaccountbookMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 214
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/25/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/TemplateandaccountbookMapper.xml
+END
+ClientinfoMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/17/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/ClientinfoMapper.xml
+END
+CharacteristicMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 205
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/7/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/CharacteristicMapper.xml
+END
+TeamMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/16/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/TeamMapper.xml
+END
+OtherinfoMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 201
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/21/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/OtherinfoMapper.xml
+END
+AccountbookanditemsMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 211
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/38/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/AccountbookanditemsMapper.xml
+END
+RoomreservationdetailMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 213
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/38/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/RoomreservationdetailMapper.xml
+END
+SignbillMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/38/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/SignbillMapper.xml
+END
+CreditcardMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/18/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/CreditcardMapper.xml
+END
+MembercardMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/18/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/MembercardMapper.xml
+END
+UserMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/37/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/UserMapper.xml
+END
+FloorMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 196
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/4/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/FloorMapper.xml
+END
+AccountMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 199
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/33/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/AccountMapper.xml
+END
+SalesmanMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/16/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/SalesmanMapper.xml
+END
+EmployeeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 200
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/20/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/EmployeeMapper.xml
+END
+AignbilltemplateMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 208
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/16/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/AignbilltemplateMapper.xml
+END
+NohireroomMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 202
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/36/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/NohireroomMapper.xml
+END
+RoomreservationMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 207
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/37/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/RoomreservationMapper.xml
+END
+SettleaccountsMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 206
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/38/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/SettleaccountsMapper.xml
+END
+AccountitemsMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 203
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/9/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/AccountitemsMapper.xml
+END
+RoomtypeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 199
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/8/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/RoomtypeMapper.xml
+END
+AgreementclientMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 207
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/16/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/AgreementclientMapper.xml
+END
+SignbilldetailMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 206
+/svn/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/!svn/ver/38/%E5%8D%8E%E4%BB%AA%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/src/com/hy/mapping/SignbilldetailMapper.xml
+END

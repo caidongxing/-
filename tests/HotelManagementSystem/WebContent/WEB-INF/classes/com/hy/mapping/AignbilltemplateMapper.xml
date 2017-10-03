@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hy.dao.AignbilltemplateMapper" >
+  <resultMap id="BaseResultMap" type="com.hy.po.Aignbilltemplate" >
+    <id column="signbilltemplateid" property="signbilltemplateid" jdbcType="INTEGER" />
+    <result column="templatename" property="templatename" jdbcType="VARCHAR" />
+    <result column="comment" property="comment" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    signbilltemplateid, templatename, comment
+  </sql>
+  
+  
+  <select id="queryPage" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from signbilltemplate
+    WHERE 1 = 1
+    <if test="templatename != null &amp; templatename != ''" >
+       and templatename LIKE CONCAT('%', #{templatename,jdbcType=VARCHAR}, '%')
+    </if>
+    LIMIT #{firstResult} ,#{pageSize}
+  </select>
+  
+  <select id="count" resultType="java.lang.Integer">
+    select COUNT(*)
+    from signbilltemplate
+    where 1 = 1
+    <if test="templatename != null &amp; templatename != ''" >
+       and templatename LIKE CONCAT('%', #{templatename,jdbcType=VARCHAR}, '%')
+    </if>
+  </select>
+  
+  <select id="findAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from signbilltemplate
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from signbilltemplate
+    where signbilltemplateid = #{signbilltemplateid,jdbcType=INTEGER}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from signbilltemplate
+    where signbilltemplateid = #{signbilltemplateid,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.hy.po.Aignbilltemplate" >
+    <selectKey resultType="java.lang.Integer" keyProperty="signbilltemplateid" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    
+    insert into signbilltemplate (signbilltemplateid, templatename, 
+      comment)
+    values (#{signbilltemplateid,jdbcType=INTEGER}, #{templatename,jdbcType=VARCHAR}, 
+      #{comment,jdbcType=VARCHAR})
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.hy.po.Aignbilltemplate" >
+    <selectKey resultType="java.lang.Integer" keyProperty="signbilltemplateid" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    
+    insert into signbilltemplate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="signbilltemplateid != null" >
+        signbilltemplateid,
+      </if>
+      <if test="templatename != null" >
+        templatename,
+      </if>
+      <if test="comment != null" >
+        comment,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="signbilltemplateid != null" >
+        #{signbilltemplateid,jdbcType=INTEGER},
+      </if>
+      <if test="templatename != null" >
+        #{templatename,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null" >
+        #{comment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hy.po.Aignbilltemplate" >
+    update signbilltemplate
+    <set >
+      <if test="templatename != null" >
+        templatename = #{templatename,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null" >
+        comment = #{comment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where signbilltemplateid = #{signbilltemplateid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hy.po.Aignbilltemplate" >
+    update signbilltemplate
+    set templatename = #{templatename,jdbcType=VARCHAR},
+      comment = #{comment,jdbcType=VARCHAR}
+    where signbilltemplateid = #{signbilltemplateid,jdbcType=INTEGER}
+  </update>
+</mapper>

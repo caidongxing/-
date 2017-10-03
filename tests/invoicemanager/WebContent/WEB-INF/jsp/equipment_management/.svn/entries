@@ -1,0 +1,68 @@
+10
+
+dir
+30
+https://127.0.0.1/svn/invoicemanager/trunk/WebRoot/WEB-INF/jsp/equipment_management
+https://127.0.0.1/svn/invoicemanager
+
+
+
+2016-12-05T03:02:30.907369Z
+30
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7bfea29d-6538-1248-9dc5-e7154b039554
+
+
+
+
+
+
+0
+
+equipment_ password_setting
+dir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+
+equipment_clock_setting
+dir
+
+equipment_password_setting
+dir
+
+equipment_status_query
+dir
+

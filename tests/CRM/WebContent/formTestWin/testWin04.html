@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>testWin01.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/divwin.js"></script>
+    <script type="text/javascript">
+ 		var myWin;
+ 		var registerForm = '<form action="">'+
+ 							'用户名：<input type="text" name="username"/><br>' +
+ 							'密码：<input type="password" name="password"/><br>' +
+ 							'<input type="submit" value="注册">' +
+ 							'<input type="reset" value="重置">' +
+ 							'</form>'
+ 	
+ 		function showXWin(){
+ 			if(myWin == null) {
+ 				myWin = new xWin("1",160,200,200,200,"注册新用户",registerForm);
+ 			}else {
+ 				myWin.show();
+ 			}
+ 		} 	
+
+ 	</script>
+
+  </head>
+  
+  <body>
+    
+   <input type="button" value="添加用户" onclick="showXWin()">
+
+  </body>
+</html>

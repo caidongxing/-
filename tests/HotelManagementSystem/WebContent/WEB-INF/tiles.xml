@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+  <definition name="defaultTemplate" template="/WEB-INF/layouts/template.jsp">
+    <put-attribute name="title" value="华仪酒店管理系统" />
+    <put-attribute name="header" value="/WEB-INF/layouts/header.jsp" />
+    <put-attribute name="menu" value="/WEB-INF/layouts/menu.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp" />
+  </definition>
+  
+   <definition name="indexTemplate"  extends="defaultTemplate">
+    <put-attribute name="body" value="/WEB-INF/layouts/body.jsp" />
+  </definition>
+  
+  <definition name="pagesTemplate" template="/WEB-INF/layouts/pages.jsp" />
+  
+  <definition name="detailTemplate" template="/WEB-INF/jsp/roomreservation/detail.jsp" />
+  
+</tiles-definitions>  
+       

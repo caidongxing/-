@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/invoicemanager/!svn/ver/20/trunk/WebRoot/WEB-INF/jsp/taxitem
+END
+taxitem_update.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/invoicemanager/!svn/ver/19/trunk/WebRoot/WEB-INF/jsp/taxitem/taxitem_update.jsp
+END
+taxitem_list.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/invoicemanager/!svn/ver/19/trunk/WebRoot/WEB-INF/jsp/taxitem/taxitem_list.jsp
+END
+taxitem_add.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/invoicemanager/!svn/ver/20/trunk/WebRoot/WEB-INF/jsp/taxitem/taxitem_add.jsp
+END

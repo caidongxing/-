@@ -1,0 +1,115 @@
+10
+
+dir
+22
+https://127.0.0.1/svn/invoicemanager/trunk/WebRoot/assets
+https://127.0.0.1/svn/invoicemanager
+
+
+
+2016-11-18T23:57:44.514427Z
+6
+root
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+7bfea29d-6538-1248-9dc5-e7154b039554
+
+bootstrap
+dir
+
+bootstrap-colorpicker
+dir
+
+bootstrap-datepicker
+dir
+
+bootstrap-daterangepicker
+dir
+
+bootstrap-inputmask
+dir
+
+bootstrap-timepicker
+dir
+
+bootstrap-toggle-buttons
+dir
+
+bootstrap-tree
+dir
+
+bootstrap-wizard
+dir
+
+bootstrap-wysihtml5
+dir
+
+chart-master
+dir
+
+chosen-bootstrap
+dir
+
+ckeditor
+dir
+
+clockface
+dir
+
+data-tables
+dir
+
+dropzone
+dir
+
+fancybox
+dir
+
+flot
+dir
+
+font-awesome
+dir
+
+fullcalendar
+dir
+
+gritter
+dir
+
+jquery-easy-pie-chart
+dir
+
+jquery-slimscroll
+dir
+
+jquery-tags-input
+dir
+
+jquery-ui
+dir
+
+jqvmap
+dir
+
+metr-folio
+dir
+
+nestable
+dir
+
+uniform
+dir
+
